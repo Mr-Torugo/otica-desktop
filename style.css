@@ -241,7 +241,6 @@
 
 /* CSS for section section:services */
 .services-section {
-    background-image: url('images/223_93.svg');
     background-size: cover;
     background-position: center;
     padding: 80px 0;
@@ -260,6 +259,8 @@
     gap: 40px;
 }
 
+
+
 .service-card {
     position: relative;
     width: 552px;
@@ -275,6 +276,23 @@
     color: #000;
 }
 
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 70%);
+    border-radius: 90px;
+    z-index: -1;
+}
+
+.service-card>img {
+    filter: brightness(90%);
+    background-color: white;
+}
+
 .service-card-bg {
     position: absolute;
     top: 0;
@@ -282,14 +300,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2;
 }
 
 .service-card-content {
-    text-align: left;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .service-card h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Roboto', sans-serif;
     font-size: 70px;
     margin: 0 0 20px 0;
@@ -314,7 +338,7 @@
     font-size: 24px;
     width: 371px;
     gap: 15px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 @media (max-width: 1200px) {
@@ -332,6 +356,7 @@
     }
 
     .service-card h3 {
+        display: flex;
         font-size: 50px;
     }
 
@@ -348,7 +373,7 @@
 
 /* CSS for section section:products */
 .products-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: #f7faff;
 }
 
@@ -439,7 +464,6 @@
 
 /* CSS section:about */
 .about-section {
-    padding: 80px 0;
     background-image: url('images/230_176.svg');
     background-size: cover;
     background-position: center;
@@ -457,11 +481,15 @@
 }
 
 .about-us-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-basis: 45%;
 }
 
 .about-us-image img {
-    width: 100%;
+    display: flex;
+    width: 90%;
     border-radius: 50px;
     border: 5px solid var(--primary-color);
 }
@@ -588,6 +616,9 @@
 }
 
 .location-content .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
