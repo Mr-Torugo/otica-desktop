@@ -138,6 +138,89 @@
     flex: 1;
 }
 
+
+.slider-container {
+    width: 538px;
+    height: 546px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Contêiner interno que segura TODOS os slides lado a lado */
+.slider-inner {
+    display: flex;
+    /* Coloca os slides lado a lado */
+    width: 100%;
+    /* Largura inicial (será ajustada pelo JS) */
+    height: 100%;
+    transition: transform 0.7s ease-in-out;
+    /* Animação de deslizamento */
+}
+
+/* Estilo de cada slide individual */
+.slide {
+    min-width: 100%;
+    /* Cada slide ocupa 100% da largura do contêiner visível */
+    height: 100%;
+    flex-shrink: 0;
+    /* Impede que os slides encolham */
+}
+
+/* Estilo da imagem dentro do slide */
+.slide img {
+    width: 538px;
+    height: 546px;
+    object-fit: cover;
+    /* Faz a imagem cobrir todo o espaço sem distorcer */
+}
+
+/* Contêiner das bolinhas */
+.slider-dots {
+    position: absolute;
+    /* Posiciona sobre o slider */
+    bottom: 20px;
+    /* Distância da borda inferior */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* Ajuste fino da centralização */
+    display: flex;
+    /* Coloca as bolinhas lado a lado */
+    gap: 10px;
+    /* Espaçamento entre as bolinhas */
+    z-index: 10;
+    /* Garante que as bolinhas fiquem acima dos slides */
+}
+
+/* Estilo de cada bolinha (dot) */
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    /* Deixa redondo */
+    background-color: #ffffff;
+    /* Cor da bolinha inativa */
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Animação suave */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* Borda sutil para destaque */
+}
+
+/* Estilo da bolinha ativa (do slide atual) */
+.dot.active {
+    background-color: var(--primary-color);
+    /* Cor da bolinha ativa */
+    opacity: 1;
+    transform: scale(1.2);
+    /* Fica um pouco maior */
+    border-color: var(--primary-color);
+}
+
 .hero-content h1 {
     font-size: 54px;
     line-height: 1.1;
@@ -462,10 +545,11 @@
     }
 }
 
-/* CSS section:about */
+/* CSS para a section:about */
 .about-section {
     background-image: url('images/230_176.svg');
     background-size: cover;
+    padding-bottom: 60px;
     background-position: center;
 }
 
@@ -477,6 +561,7 @@
 .about-us-content {
     display: flex;
     gap: 40px;
+    padding: 20px;
     align-items: center;
 }
 
@@ -489,7 +574,7 @@
 
 .about-us-image img {
     display: flex;
-    width: 90%;
+    width: 80%;
     border-radius: 50px;
     border: 5px solid var(--primary-color);
 }
@@ -525,10 +610,10 @@
     }
 }
 
-/* CSS for section section:features */
+/* CSS para a section:features */
 .features-section {
     padding: 80px 0;
-    background-color: var(--background-light);
+    background-image: url('images/27_829.svg');
     /* Fallback, part of about section bg */
 }
 
@@ -578,10 +663,9 @@
     }
 }
 
-/* CSS for section section:location */
+/* CSS para a section:location */
 .location-section {
     padding: 80px 0;
-    background-image: url('images/27_829.svg');
     background-size: cover;
     background-position: center;
     position: relative;
