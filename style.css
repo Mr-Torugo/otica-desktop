@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
 /* CSS for section section:header */
 .site-header {
     background-color: var(--background-light);
@@ -95,8 +97,6 @@
     .main-nav {
         display: none;
     }
-
-    /* Simplified for example, would need hamburger menu */
 }
 
 @media (max-width: 992px) {
@@ -121,6 +121,7 @@
 }
 
 /* CSS for section section:hero */
+
 .hero-section {
     background-image: url('images/27_896.svg');
     background-size: cover;
@@ -330,6 +331,7 @@
 }
 
 .section-title {
+    padding: 30px;
     text-align: center;
     font-size: 40px;
     color: var(--text-dark);
@@ -340,6 +342,8 @@
     display: flex;
     justify-content: center;
     gap: 40px;
+    align-items: stretch;
+    padding-bottom: 30px-;
 }
 
 
@@ -347,13 +351,11 @@
 .service-card {
     position: relative;
     width: 552px;
-    height: 597px;
     border-radius: 90px;
     border: 5px solid var(--primary-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     padding: 40px;
     box-sizing: border-box;
     color: #000;
@@ -391,6 +393,7 @@
     text-align: center;
     flex-direction: column;
     gap: 10px;
+    flex-grow: 1;
 }
 
 .service-card h3 {
@@ -401,6 +404,7 @@
     font-size: 70px;
     margin: 0 0 20px 0;
 }
+
 
 .service-card h4 {
     font-family: 'Montserrat', sans-serif;
@@ -419,9 +423,11 @@
 
 .service-card-btn {
     font-size: 24px;
-    width: 371px;
+    width: 400px;
+    height: 65px;
     gap: 15px;
     align-self: center;
+    margin-top: auto;
 }
 
 @media (max-width: 1200px) {
@@ -449,12 +455,12 @@
     }
 
     .service-card-btn {
-        width: 100%;
+        width: 80%;
         font-size: 18px;
     }
 }
 
-/* CSS for section section:products */
+/* CSS para a section:products */
 .products-section {
     padding: 60px 0;
     background-color: #f7faff;
@@ -529,8 +535,9 @@
 }
 
 .section-action .btn {
-    width: 204px;
+    width: 270px;
     justify-content: space-between;
+
 }
 
 @media (max-width: 992px) {
@@ -544,6 +551,7 @@
         grid-template-columns: 1fr;
     }
 }
+
 
 /* CSS para a section:about */
 .about-section {
@@ -614,7 +622,6 @@
 .features-section {
     padding: 80px 0;
     background-image: url('images/27_829.svg');
-    /* Fallback, part of about section bg */
 }
 
 .features-section .section-title {
@@ -686,11 +693,15 @@
 }
 
 .location-content {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
 }
 
 .location-content h3 {
     font-size: 38px;
+    margin-bottom: 20px;
 }
 
 .location-content p {
@@ -773,7 +784,7 @@ iframe {
 
 .footer-column ul li {
     margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     display: flex;
     align-items: flex-start;
