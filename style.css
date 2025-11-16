@@ -842,25 +842,6 @@ iframe {
     }
 }
 
-@media (max-width: 992px) {
-
-    .carousel__container:hover .carousel-item:hover {
-        -webkit-transform: none;
-        transform: none;
-        opacity: 1;
-    }
-
-    /* Desabilita o efeito de "empurrar" os outros cards */
-    .carousel-item:hover~.carousel-item {
-        -webkit-transform: none;
-        transform: none;
-    }
-
-    /* Desabilita o efeito de 'sumir' nos outros cards */
-    .carousel__container:hover .carousel-item {
-        opacity: 1;
-    }
-}
 
 /* cards instagram  */
 
@@ -899,6 +880,7 @@ iframe {
     padding-bottom: 10px;
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 .categories__title {
@@ -991,4 +973,60 @@ iframe {
     font-size: 14px;
     font-weight: 500;
     text-decoration: underline;
+}
+
+/* =============================================
+   AJUSTE FINO PARA CARROSSEL NO MOBILE
+   ============================================= */
+
+@media (max-width: 992px) {
+
+    /* --- NOVAS REGRAS PARA EMPILHAR OS CARDS --- */
+
+    /* 1. Remove a rolagem horizontal */
+    .carousel {
+        overflow-x: hidden;
+        /* Remove a rolagem e o espaço extra */
+        margin-top: 0;
+        padding-top: 40px;
+    }
+
+    /* 2. Define o layout de coluna e permite a quebra de linha */
+    .carousel__container {
+        flex-direction: column;
+        align-items: center;
+        white-space: normal;
+        /* ESSENCIAL: Permite que os itens quebrem para a "linha" de baixo (que agora é vertical) */
+        gap: 30px;
+        /* Adiciona um espaço entre os cards empilhados */
+        margin: 0;
+        padding: 20px 0px 0px 0px;
+    }
+
+    /* 3. Reseta as margens dos cards para o novo layout */
+    .carousel-item {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+
+    /* --- REGRAS QUE VOCÊ JÁ TINHA (para desativar o hover) --- */
+
+    /* Desabilita o efeito de zoom no hover */
+    .carousel__container:hover .carousel-item:hover {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    /* Desabilita o efeito de "empurrar" */
+    .carousel-item:hover~.carousel-item {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    /* Desabilita o efeito de 'sumir' */
+    .carousel__container:hover .carousel-item {
+        opacity: 1;
+    }
 }
