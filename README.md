@@ -1,1 +1,8 @@
-Site para a otica inovação. 
+ 
+Site para a otica inovação.
+---
+O controle das tarefas desse projeto sera realizado no Github
+---
+Icones
+
+📦 nova funcionalidade 🆙 atualização 🪲 correção de bug 🏁 release
