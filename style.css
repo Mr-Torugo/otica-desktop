@@ -884,7 +884,7 @@ iframe {
 }
 
 .categories__title {
-    color: rgb(0, 0, 0);
+    color: var(--text-dark);
     font-size: 40px;
     display: flex;
     padding-left: 30px;
