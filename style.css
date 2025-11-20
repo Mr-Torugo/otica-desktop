@@ -164,10 +164,8 @@
 /* Estilo de cada slide individual */
 .slide {
     min-width: 100%;
-    /* Cada slide ocupa 100% da largura do contêiner visível */
     height: 100%;
     flex-shrink: 0;
-    /* Impede que os slides encolham */
 }
 
 /* Estilo da imagem dentro do slide */
@@ -175,41 +173,30 @@
     width: 538px;
     height: 546px;
     object-fit: cover;
-    /* Faz a imagem cobrir todo o espaço sem distorcer */
+
 }
 
 /* Contêiner das bolinhas */
 .slider-dots {
     position: absolute;
-    /* Posiciona sobre o slider */
     bottom: 20px;
-    /* Distância da borda inferior */
     left: 50%;
-    /* Centraliza horizontalmente */
     transform: translateX(-50%);
-    /* Ajuste fino da centralização */
     display: flex;
-    /* Coloca as bolinhas lado a lado */
     gap: 10px;
-    /* Espaçamento entre as bolinhas */
     z-index: 10;
-    /* Garante que as bolinhas fiquem acima dos slides */
+
 }
 
-/* Estilo de cada bolinha (dot) */
 .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    /* Deixa redondo */
     background-color: #ffffff;
-    /* Cor da bolinha inativa */
     opacity: 0.7;
     cursor: pointer;
     transition: all 0.3s ease;
-    /* Animação suave */
     border: 1px solid rgba(0, 0, 0, 0.2);
-    /* Borda sutil para destaque */
 }
 
 /* Estilo da bolinha ativa (do slide atual) */
@@ -220,6 +207,49 @@
     transform: scale(1.2);
     /* Fica um pouco maior */
     border-color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    /* Ajuste para Tablets e Celulares */
+
+    .slider-container {
+        /* 1. Define um tamanho flexível */
+        width: 80%;
+        /* Ocupa 80% da tela (sobra margem lateral) */
+        max-width: 500px;
+        /* Trava um tamanho máximo para não ficar gigante */
+
+        /* 2. Ajusta a altura automaticamente mantendo a proporção */
+        height: auto;
+        aspect-ratio: 538 / 546;
+        /* Mantém a proporção exata da sua imagem original */
+
+        /* 3. Adiciona margem para separar do texto acima */
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    /* É CRUCIAL forçar a imagem a obedecer o novo tamanho do container */
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Garante que o slide acompanhe o redimensionamento */
+    .slide {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Ajuste Fino para Celulares Pequenos */
+    .slider-container {
+        width: 90%;
+        /* Aumenta um pouco a largura em telas muito pequenas */
+        margin-top: 40px;
+    }
 }
 
 .hero-content h1 {
@@ -490,6 +520,25 @@
     border: 1px solid #dde1e6;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.product-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+
+    border-color: var(--primary-color);
+}
+
+
+.product-card:hover .btn-primary {
+    background-color: #0d5aab;
+    transform: scale(1.05);
+
 }
 
 .product-card img {
@@ -732,6 +781,13 @@ iframe {
         flex-direction: column;
     }
 
+    .location-map {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .location-title-wrapper {
         position: static;
         transform: none;
@@ -835,6 +891,10 @@ iframe {
 @media (max-width: 768px) {
     .footer-map-column {
         grid-column: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
     }
 
     .footer-bottom {
@@ -976,12 +1036,11 @@ iframe {
 }
 
 /* =============================================
-   AJUSTE FINO PARA CARROSSEL NO MOBILE
+   AJUSTE FINO PARA PAGINA INSTAGRAM NO MOBILE
    ============================================= */
 
 @media (max-width: 992px) {
 
-    /* --- NOVAS REGRAS PARA EMPILHAR OS CARDS --- */
 
     /* 1. Remove a rolagem horizontal */
     .carousel {
@@ -1010,8 +1069,6 @@ iframe {
     }
 
 
-    /* --- REGRAS QUE VOCÊ JÁ TINHA (para desativar o hover) --- */
-
     /* Desabilita o efeito de zoom no hover */
     .carousel__container:hover .carousel-item:hover {
         -webkit-transform: none;
@@ -1030,3 +1087,5 @@ iframe {
         opacity: 1;
     }
 }
+
+product-card

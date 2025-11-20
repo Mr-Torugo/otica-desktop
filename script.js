@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const dots = document.querySelectorAll(".dot");
 
-    // --- 2. FUNÇÃO PARA ATUALIZAR O SLIDER (MUDOU AQUI!) ---
+    // --- 2. FUNÇÃO PARA ATUALIZAR O SLIDER (CORRIGIDA) ---
     function updateSlider(newIndex) {
         // Remove a classe 'active' da bolinha antiga
         dots[slideIndex].classList.remove("active");
@@ -46,10 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
         // Adiciona a classe 'active' na nova bolinha
         dots[slideIndex].classList.add("active");
 
-        // Move o slider-inner para mostrar o slide correto
-        // newIndex * 100% (negativo para mover para a esquerda)
-        sliderInner.style.transform = `translateX(-${slideIndex * 100}%)`;
+        // SOLUÇÃO DO PROBLEMA:
+        // Pega a largura exata do slide atual na tela do usuário
+        const currentSlideWidth = slides[0].clientWidth;
+
+        // Move o slider usando pixels exatos baseados nessa largura
+        sliderInner.style.transform = `translateX(-${slideIndex * currentSlideWidth}px)`;
     }
+
+    //corrigir o slider se o usuário girar a tela
+    window.addEventListener('resize', () => {
+        updateSlider(slideIndex);
+    });
 
     // --- 3. FUNÇÃO PARA O PRÓXIMO SLIDE (automático) ---
     function nextSlide() {
