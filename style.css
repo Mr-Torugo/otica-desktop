@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
 
+
+
 /* CSS for section section:header */
 .site-header {
     background-color: var(--background-light);
@@ -123,7 +125,7 @@
 /* CSS for section section:hero */
 
 .hero-section {
-    background-image: url('images/27_896.svg');
+    background-image: url('./images/icons/BGHERO.svg');
     background-size: cover;
     background-position: center;
     padding: 80px 0;
@@ -681,11 +683,34 @@
     margin-bottom: 20px;
 }
 
+.feature-card {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid transparent;
+}
+
+.feature-card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.feature-card:hover img {
+    transform: scale(1.05) rotate(3deg);
+}
+
 .feature-card h4 {
     font-size: 25px;
     color: #0a0930;
     min-height: 64px;
-    /* To align heights */
 }
 
 .feature-card p {
@@ -711,6 +736,7 @@
 
 /* CSS para a section:location */
 .location-section {
+    background-color: var(--background-bluelight);
     padding: 80px 0;
     background-size: cover;
     background-position: center;
@@ -791,7 +817,7 @@ iframe {
 
 /* CSS for section section:footer */
 .site-footer {
-    background-image: url('images/27_705.svg');
+    background-color: var(--primary-color);
     background-size: cover;
     background-position: center;
     color: var(--text-light);
@@ -884,7 +910,7 @@ iframe {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 90%;
+        width: 100%;
     }
 
     .footer-bottom {
@@ -922,7 +948,16 @@ iframe {
     box-sizing: border-box;
     flex-direction: column;
     padding-bottom: 80px;
+    background-color: var(--background-bluelight);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
 }
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
 
 .carousel__container {
     white-space: nowrap;
@@ -1045,38 +1080,37 @@ iframe {
         flex-direction: column;
         align-items: center;
         white-space: normal;
-        /* ESSENCIAL: Permite que os itens quebrem para a "linha" de baixo (que agora é vertical) */
+        /* Permite que os itens quebrem para a "linha" de baixo (que agora é vertical) */
         gap: 30px;
         /* Adiciona um espaço entre os cards empilhados */
         margin: 0;
         padding: 20px 0px 0px 0px;
     }
 
-    /* 3. Reseta as margens dos cards para o novo layout */
     .carousel-item {
         margin-top: 0;
         margin-right: 0;
     }
 
 
-    /* Desabilita o efeito de zoom no hover */
     .carousel__container:hover .carousel-item:hover {
         -webkit-transform: none;
         transform: none;
         opacity: 1;
     }
 
-    /* Desabilita o efeito de "empurrar" */
     .carousel-item:hover~.carousel-item {
         -webkit-transform: none;
         transform: none;
     }
 
-    /* Desabilita o efeito de 'sumir' */
     .carousel__container:hover .carousel-item {
         opacity: 1;
     }
 }
+
+
+/* CSS para o botão flutuante do WhatsApp */
 
 .btn-whatsapp-float {
     position: fixed;
@@ -1094,8 +1128,6 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* Transição suave para o hover */
     transition: all 0.3s ease-in-out;
 }
 

@@ -10,7 +10,13 @@
   --text-light: #ffffff;
   --background-light: #ffffff;
   --background-dark: #001325;
+  --background-bluelight: #f7faff;
   --background-grey: #f0f3f6;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Ajuste esse número conforme a altura do seu menu */
 }
 
 body {
