@@ -340,6 +340,7 @@
     background-size: cover;
     background-position: center;
     padding: 80px 0;
+
 }
 
 .section-title {
@@ -475,7 +476,7 @@
 /* CSS para a section:products */
 .products-section {
     padding: 60px 0;
-    background-color: #f7faff;
+    background-color: var(--background-bluelight);
 }
 
 .products-section .section-title {
